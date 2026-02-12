@@ -1,0 +1,368 @@
+/* ---------------------------------------------------------- */
+/* GLOBAL STYLE */
+/* ---------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f0f0f;
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------------- */
+/* NAVIGATION BAR */
+/* ---------------------------------------------------------- */
+.navbar {
+    background: #1a1a1a;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 18px;
+    transition: 0.3s;
+    padding: 5px 10px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: #00eaff;
+    text-shadow: 0px 0px 10px #00eaff;
+}
+
+/* ---------------------------------------------------------- */
+/* SECTIONS + ANIMATION */
+/* ---------------------------------------------------------- */
+section {
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.9s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------------------------------------- */
+/* HOME SECTION */
+/* ---------------------------------------------------------- */
+.home-section h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #00eaff;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home-section p {
+    font-size: 22px;
+    color: #bfbfbf;
+}
+
+/* ---------------------------------------------------------- */
+/* ABOUT SECTION */
+/* ---------------------------------------------------------- */
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #00eaff;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
+    transition: 0.3s;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 238, 255, 0.7);
+}
+
+/* ---------------------------------------------------------- */
+/* EDUCATION SECTION */
+/* ---------------------------------------------------------- */
+.education-section ul {
+    list-style: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.education-section li {
+    margin: 12px 0;
+    color: #d9d9d9;
+}
+
+/* ---------------------------------------------------------- */
+/* CONTACT BUTTON STYLE (GLOBAL) */
+/* ---------------------------------------------------------- */
+.contact-section a,
+button {
+    background: #00eaff;
+    color: #000;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.contact-section a:hover,
+button:hover {
+    background: #00b4c2;
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* ---------------------------------------------------------- */
+/* CONTACT PAGE */
+/* ---------------------------------------------------------- */
+
+/* Contact Page Main Container */
+.contact-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 38px;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    font-size: 18px;
+    color: #bfbfbf;
+    margin-bottom: 40px;
+}
+
+/* Contact Info Boxes */
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.contact-item {
+    width: 30%;
+    min-width: 240px;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.08);
+    transition: 0.3s ease;
+}
+
+.contact-item h3 {
+    color: #00eaff;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.contact-item p {
+    color: #dcdcdc;
+    font-size: 18px;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.3);
+}
+
+/* MESSAGE FORM */
+.message-form {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.15);
+    text-align: left;
+}
+
+.message-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00eaff;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-form label {
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+.message-form input,
+.message-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: #0f0f0f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+    border-color: #00eaff;
+    box-shadow: 0 0 8px #00eaff;
+    outline: none;
+}
+
+.message-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.message-form button {
+    background: #00eaff;
+    padding: 12px;
+    color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.message-form button:hover {
+    background: #00b4c2;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* ---------------------------------------------------------- */
+/* FOOTER */
+/* ---------------------------------------------------------- */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1a1a1a;
+    margin-top: 50px;
+    font-size: 16px;
+    color: #cccccc;
+    border-top: 1px solid #333;
+}
+
+.footer p:hover {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* ---------------------------------------------------------- */
+/* RESPONSIVE */
+/* ---------------------------------------------------------- */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .home-section h1 {
+        font-size: 36px;
+    }
+
+    .profile-photo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-item {
+        width: 100%;
+    }
+}
+/* CV BUTTON */
+.cv-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #00eaff;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.cv-btn:hover {
+    background: #00b4c2;
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #00eaff;
+}
+/* ---------------------------------------------------------- */
+/* HOME PAGE PROFILE IMAGE */
+/* ---------------------------------------------------------- */
+
+.home-profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00eaff;
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.5);
+    margin-bottom: 20px;
+    animation: fadeZoom 1.2s ease-out;
+}
+
+/* Image Animation */
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
